@@ -270,7 +270,7 @@ const SearchResultsPanel = React.memo(({
         <div className="flex items-center gap-2">
           <MagnifyingGlassIcon className="h-4 w-4 text-blue-600" />
           <span className="text-sm text-blue-700">
-            搜尋關鍵字：<strong>"{searchTerm}"</strong>
+            搜尋關鍵字：<strong>&quot;{searchTerm}&quot;</strong>
           </span>
         </div>
       </div>
