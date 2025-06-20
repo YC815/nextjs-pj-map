@@ -150,7 +150,7 @@ function getNodeStyle(id: string, nodeType?: string, isHighlighted = false, isFi
 
 // dagre 布局函數 - 純函數優化
 function getLayoutedElements(nodes: Node[], edges: Edge[]) {
-  dagreGraph.setGraph({ rankdir: "LR", nodesep: 40, ranksep: 80 });
+  dagreGraph.setGraph({ rankdir: "LR", nodesep: 30, ranksep: 300 });
 
   nodes.forEach((node) => {
     dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
@@ -240,59 +240,114 @@ const FileTypeFilters = React.memo(({
 
 FileTypeFilters.displayName = 'FileTypeFilters';
 
-// Docker 專用篩選組件
-const DockerFilters = React.memo(({ 
-  dockerAnalysis,
-  onToggleDockerFilter,
-  showDockerOnly,
-  showDockerNodes
+// 搜尋結果面板組件
+const SearchResultsPanel = React.memo(({ 
+  searchResults,
+  searchTerm,
+  onSelectResult,
+  onClosePanel
 }: {
-  dockerAnalysis: Record<string, DockerAnalysisResult>;
-  onToggleDockerFilter: (type: 'files' | 'nodes') => void;
-  showDockerOnly: boolean;
-  showDockerNodes: boolean;
+  searchResults: Node[];
+  searchTerm: string;
+  onSelectResult: (node: Node) => void;
+  onClosePanel: () => void;
 }) => {
-  console.log("DockerFilters - dockerAnalysis:", dockerAnalysis); // 調試日誌
-  
-  const dockerFileCount = Object.values(dockerAnalysis).filter(analysis => analysis.hasDockerIntegration).length;
-  const dockerNodeCount = Object.values(dockerAnalysis).reduce((count, analysis) => {
-    const toolCount = analysis.dockerTools?.length || 0;
-    const apiCount = analysis.dockerApis?.length || 0;
-    return count + toolCount + apiCount;
-  }, 0);
-  
-  console.log("DockerFilters - dockerFileCount:", dockerFileCount, "dockerNodeCount:", dockerNodeCount); // 調試日誌
-
   return (
-    <div className="flex flex-wrap gap-2">
-      <button
-        onClick={() => onToggleDockerFilter('files')}
-        className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold transition-all border-2 ${
-          showDockerOnly 
-            ? 'bg-blue-600 text-white border-blue-600 shadow-md' 
-            : 'bg-white text-gray-800 hover:bg-blue-50 border-blue-300 hover:border-blue-400 shadow-sm hover:shadow-md'
-        }`}
-      >
-        <span className="w-4 h-4 rounded-full mr-2 border border-white shadow-sm bg-blue-600"></span>
-        🐳 僅顯示 Docker 檔案 ({dockerFileCount})
-      </button>
+    <div className="w-80 bg-white/95 backdrop-blur-sm border-l-2 border-gray-300 p-6 overflow-y-auto shadow-xl">
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-xl font-bold text-gray-900">
+          搜尋結果 ({searchResults.length})
+        </h2>
+        <button
+          onClick={onClosePanel}
+          className="text-gray-500 hover:text-gray-800 hover:bg-gray-100 rounded-full p-2 transition-all text-lg font-bold"
+        >
+          ✕
+        </button>
+      </div>
+
+      <div className="mb-4 p-3 bg-blue-50 rounded-lg">
+        <div className="flex items-center gap-2">
+          <MagnifyingGlassIcon className="h-4 w-4 text-blue-600" />
+          <span className="text-sm text-blue-700">
+            搜尋關鍵字：<strong>"{searchTerm}"</strong>
+          </span>
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        {searchResults.map((node, index) => {
+          const nodeType = getNodeType(node.id, node.data?.nodeType);
+          const config = FILE_TYPES[nodeType];
+          const isDockerNode = node.data.nodeType?.startsWith('docker_');
+          
+          return (
+            <div
+              key={`${node.id}-${index}`}
+              className="p-4 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 hover:border-gray-300 cursor-pointer transition-all duration-200 shadow-sm hover:shadow-md"
+              onClick={() => onSelectResult(node)}
+            >
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0">
+                  <span className="text-2xl">{config.icon}</span>
+                </div>
+                
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span 
+                      className="w-3 h-3 rounded-full flex-shrink-0"
+                      style={{ backgroundColor: config.color }}
+                    ></span>
+                    <span className="text-xs text-gray-500 uppercase font-medium">
+                      {config.label}
+                    </span>
+                    {isDockerNode && (
+                      <span className="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full">
+                        🐳 Docker
+                      </span>
+                    )}
+                  </div>
+                  
+                  <h3 className="font-medium text-gray-900 mb-1 truncate">
+                    {node.data.label}
+                  </h3>
+                  
+                  <p className="text-sm text-gray-600 truncate">
+                    {node.data.fullPath}
+                  </p>
+                  
+                  {/* Docker 節點額外資訊 */}
+                  {isDockerNode && node.data.sourceFile && (
+                    <div className="mt-2 text-xs text-blue-600">
+                      📁 來源: {node.data.sourceFile}
+                    </div>
+                  )}
+                </div>
+                
+                <div className="flex-shrink-0">
+                  <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
       
-      <button
-        onClick={() => onToggleDockerFilter('nodes')}
-        className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold transition-all border-2 ${
-          showDockerNodes 
-            ? 'bg-green-600 text-white border-green-600 shadow-md' 
-            : 'bg-white text-gray-800 hover:bg-green-50 border-green-300 hover:border-green-400 shadow-sm hover:shadow-md'
-        }`}
-      >
-        <span className="w-4 h-4 rounded-full mr-2 border border-white shadow-sm bg-green-600"></span>
-        🛠️ 顯示 Docker 節點 ({dockerNodeCount})
-      </button>
+      {searchResults.length === 0 && (
+        <div className="text-center py-8">
+          <div className="text-gray-400 mb-2">
+            <MagnifyingGlassIcon className="h-12 w-12 mx-auto" />
+          </div>
+          <p className="text-gray-500">沒有找到相關的檔案</p>
+        </div>
+      )}
     </div>
   );
 });
 
-DockerFilters.displayName = 'DockerFilters';
+SearchResultsPanel.displayName = 'SearchResultsPanel';
 
 function App() {
   const [mounted, setMounted] = useState(false);
@@ -307,8 +362,9 @@ function App() {
   const [dockerAnalysis, setDockerAnalysis] = useState<Record<string, DockerAnalysisResult>>({});
   const [analysisStats, setAnalysisStats] = useState<AnalysisStats | null>(null);
   const [summaries, setSummaries] = useState<Record<string, string>>({});
-  const [showDockerOnly, setShowDockerOnly] = useState(false);
-  const [showDockerNodes, setShowDockerNodes] = useState(true);
+  const [isToolbarCollapsed, setIsToolbarCollapsed] = useState(false);
+  const [searchResults, setSearchResults] = useState<Node[]>([]);
+  const [showSearchResults, setShowSearchResults] = useState(false);
   
   // ReactFlow 實例引用
   const reactFlowInstance = useRef<ReactFlowInstance | null>(null);
@@ -600,21 +656,35 @@ function App() {
     }
   }, []);
 
-  // 搜尋功能
+  // 搜尋功能 - 修改為顯示所有結果
   const handleSearch = useCallback((term: string) => {
     setSearchTerm(term);
     
     if (!term.trim() || !fuse) {
       setHighlightedNode(null);
+      setSearchResults([]);
+      setShowSearchResults(false);
       return;
     }
 
     const results = fuse.search(term);
-    if (results.length > 0) {
-      const foundNode = results[0].item;
-      selectNodeAndMove(foundNode);
+    const foundNodes = results.map(result => result.item);
+    
+    setSearchResults(foundNodes);
+    setShowSearchResults(foundNodes.length > 0);
+    
+    // 如果有結果，高亮第一個但不自動移動
+    if (foundNodes.length > 0) {
+      setHighlightedNode(foundNodes[0].id);
     }
-  }, [fuse, selectNodeAndMove]);
+  }, [fuse]);
+
+  // 選擇搜尋結果並關閉搜尋面板
+  const selectSearchResult = useCallback((node: Node) => {
+    selectNodeAndMove(node);
+    setShowSearchResults(false);
+    setSelectedNode(node);
+  }, [selectNodeAndMove]);
 
   // 濾鏡功能
   const toggleFilter = useCallback((fileType: keyof typeof FILE_TYPES) => {
@@ -627,14 +697,23 @@ function App() {
     setActiveFilters(newFilters);
   }, [activeFilters]);
 
-  // Docker 篩選功能
-  const toggleDockerFilter = useCallback((type: 'files' | 'nodes') => {
-    if (type === 'files') {
-      setShowDockerOnly(!showDockerOnly);
-    } else {
-      setShowDockerNodes(!showDockerNodes);
+  // 導航到主頁（page.tsx）的函數
+  const navigateToHomePage = useCallback(() => {
+    const homePageNode = nodes.find(node => 
+      node.id.includes('page.tsx') || 
+      node.id.includes('src/app/page.tsx') ||
+      node.data.fullPath.includes('page.tsx')
+    );
+    
+    if (homePageNode) {
+      selectNodeAndMove(homePageNode);
     }
-  }, [showDockerOnly, showDockerNodes]);
+  }, [nodes, selectNodeAndMove]);
+
+  // 切換工具列顯示/隱藏
+  const toggleToolbar = useCallback(() => {
+    setIsToolbarCollapsed(!isToolbarCollapsed);
+  }, [isToolbarCollapsed]);
 
   // 重新布局
   const handleRelayout = useCallback(() => {
@@ -645,36 +724,8 @@ function App() {
   // 動態計算節點樣式和篩選，避免循環依賴
   const displayNodes = useMemo(() => {
     console.log("Filtering nodes. Total nodes:", nodes.length); // 調試日誌
-    console.log("showDockerOnly:", showDockerOnly, "showDockerNodes:", showDockerNodes); // 調試日誌
     
     const filtered = nodes
-      .filter(node => {
-        const isDockerNode = node.data.nodeType?.startsWith('docker_');
-        
-        // 嘗試多種 key 格式來查找 Docker 分析數據
-        const nodeId = node.id;
-        const keyWithGithub = `github:${nodeId}`;
-        const keyWithoutGithub = nodeId;
-        
-        const dockerData = dockerAnalysis[keyWithGithub] || dockerAnalysis[keyWithoutGithub];
-        const hasDockerIntegration = dockerData?.hasDockerIntegration;
-
-        console.log(`Node: ${nodeId}, isDockerNode: ${isDockerNode}, hasDockerIntegration: ${hasDockerIntegration}`); // 調試日誌
-
-        // Docker 檔案篩選邏輯
-        if (showDockerOnly && !isDockerNode && !hasDockerIntegration) {
-          console.log(`Filtering out non-Docker node: ${nodeId}`); // 調試日誌
-          return false;
-        }
-
-        // Docker 節點顯示邏輯
-        if (isDockerNode && !showDockerNodes) {
-          console.log(`Hiding Docker node: ${nodeId}`); // 調試日誌
-          return false;
-        }
-
-        return true;
-      })
       .map(node => ({
         ...node,
         style: getNodeStyle(
@@ -687,7 +738,7 @@ function App() {
       
     console.log("Filtered nodes count:", filtered.length); // 調試日誌
     return filtered;
-  }, [nodes, highlightedNode, activeFilters, showDockerOnly, showDockerNodes, dockerAnalysis]);
+  }, [nodes, highlightedNode, activeFilters]);
 
   // 節點點擊處理
   const onNodeClick = useCallback((event: React.MouseEvent, node: Node) => {
@@ -721,53 +772,73 @@ function App() {
   return (
     <div className="w-screen h-screen flex">
       {/* 主要圖形區域 */}
-      <div className="flex-1 relative">
-        {/* 頂部工具列 */}
-        <div className="absolute top-4 left-4 z-10 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl border border-gray-200 p-4 max-w-2xl">
-          {/* 搜尋欄 */}
-          <div className="flex items-center gap-2 mb-4">
-            <div className="relative flex-1">
-              <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500" />
-              <input
-                type="text"
-                placeholder="搜尋檔案... (例: Header, Button)"
-                value={searchTerm}
-                onChange={(e) => handleSearch(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm font-medium text-gray-900 bg-white"
-              />
-            </div>
-            
-            {/* Docker 統計資訊 */}
-            <DockerStats 
-              analysisStats={analysisStats}
-            />
-            
-            <button
-              onClick={handleRelayout}
-              className="p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-lg font-medium"
-              title="重新排版"
-            >
-              <ArrowPathIcon className="h-4 w-4" />
-            </button>
-          </div>
-
-          {/* Docker 專用篩選器 */}
-          <div className="mb-3">
-            <DockerFilters 
-              dockerAnalysis={dockerAnalysis}
-              onToggleDockerFilter={toggleDockerFilter}
-              showDockerOnly={showDockerOnly}
-              showDockerNodes={showDockerNodes}
-            />
-          </div>
-
-          {/* 檔案類型濾鏡 */}
-          <FileTypeFilters 
-            stats={stats}
-            activeFilters={activeFilters}
-            onToggleFilter={toggleFilter}
-          />
+      <div className="flex-1 relative min-w-0">
+        {/* 工具列收起/展開按鈕 */}
+        <div className="absolute top-4 left-4 z-20">
+          <button
+            onClick={toggleToolbar}
+            className="p-3 bg-white/95 backdrop-blur-sm text-gray-700 rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-md border border-gray-200"
+            title={isToolbarCollapsed ? "展開工具列" : "收起工具列"}
+          >
+            {isToolbarCollapsed ? (
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            ) : (
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+              </svg>
+            )}
+          </button>
         </div>
+
+        {/* 頂部工具列 */}
+        {!isToolbarCollapsed && (
+          <div className="absolute top-4 left-20 z-10 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl border border-gray-200 p-4 max-w-4xl">
+            {/* 搜尋欄和按鈕區域 */}
+            <div className="flex items-center gap-2 mb-4">
+              <div className="relative flex-1">
+                <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500" />
+                <input
+                  type="text"
+                  placeholder="搜尋檔案... (例: Header, Button)"
+                  value={searchTerm}
+                  onChange={(e) => handleSearch(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm font-medium text-gray-900 bg-white"
+                />
+              </div>
+              
+              {/* Docker 統計資訊 */}
+              <DockerStats 
+                analysisStats={analysisStats}
+              />
+              
+              {/* 導航到主頁按鈕 */}
+              <button
+                onClick={navigateToHomePage}
+                className="px-4 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all duration-200 shadow-md hover:shadow-lg font-medium text-sm"
+                title="導航到主頁 (page.tsx)"
+              >
+                🏠 主頁
+              </button>
+              
+              <button
+                onClick={handleRelayout}
+                className="p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-lg font-medium"
+                title="重新排版"
+              >
+                <ArrowPathIcon className="h-4 w-4" />
+              </button>
+            </div>
+
+            {/* 檔案類型濾鏡 */}
+            <FileTypeFilters 
+              stats={stats}
+              activeFilters={activeFilters}
+              onToggleFilter={toggleFilter}
+            />
+          </div>
+        )}
 
         <ReactFlowDynamic 
           nodes={displayNodes} 
@@ -777,7 +848,9 @@ function App() {
           fitView
           panOnDrag={true}
           zoomOnScroll={true}
-          fitViewOptions={{ padding: 0.2 }}
+          fitViewOptions={{ padding: 0.2, minZoom: 0.1, maxZoom: 4 }}
+          minZoom={0.1}
+          maxZoom={4}
         >
           <MiniMap 
             style={{ 
@@ -795,16 +868,29 @@ function App() {
       </div>
 
       {/* 右側資訊面板 */}
-      {selectedNode && (
-        <NodeInfoPanel 
-          selectedNode={selectedNode}
-          edges={edges}
-          nodes={nodes}
-          dockerAnalysis={dockerAnalysis}
-          summaries={summaries}
-          onClosePanel={() => setSelectedNode(null)}
-          onSelectNode={selectNodeAndMove}
-        />
+      {showSearchResults && (
+        <div className="mr-8">
+          <SearchResultsPanel 
+            searchResults={searchResults}
+            searchTerm={searchTerm}
+            onSelectResult={selectSearchResult}
+            onClosePanel={() => setShowSearchResults(false)}
+          />
+        </div>
+      )}
+      
+      {!showSearchResults && selectedNode && (
+        <div className="mr-8">
+          <NodeInfoPanel 
+            selectedNode={selectedNode}
+            edges={edges}
+            nodes={nodes}
+            dockerAnalysis={dockerAnalysis}
+            summaries={summaries}
+            onClosePanel={() => setSelectedNode(null)}
+            onSelectNode={selectNodeAndMove}
+          />
+        </div>
       )}
     </div>
   );
