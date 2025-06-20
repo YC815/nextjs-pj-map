@@ -1,0 +1,1820 @@
+[
+  {
+    "data": {
+      "id": "app/admin/logs/page.tsx"
+    }
+  },
+  {
+    "data": {
+      "id": "app/api/admin/logs/route.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/core/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/api/agent/route.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/index.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/functions/migration-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/agent-controller.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/agent-factory.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/ai-output-logger.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/chat-agent-integration.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/context-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/docker-security-validator.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/enhanced-tool-registry.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/langchain-chat-engine.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/openai.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/openai-service.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/prompt-builder.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/prompts.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/secure-chat-agent-integration.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/strict-agent-factory.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/strict-docker-tools.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/strict-tool-registry.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/tools/index.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/functions/categories.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/functions/types.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/docker/tool-registry.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/docker/ai-editor-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/docker/docker-context-config.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/docker/function-schemas.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/docker/tools.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/docker/config-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/constants.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/functions/index.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/functions/ai/index.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/functions/docker/index.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/functions/executor.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/functions/filesystem/index.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/functions/network/index.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/functions/project/index.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/functions/registry.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/functions/system/index.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/functions/tool-list.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/functions/utility/index.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/functions/utility/diff-tool.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/tools/tool-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/tools/tool-registry.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/tools/tool-types.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/api/chat-agent/route.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/api/chat-enhanced/route.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/chat/chat-context-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/database/chat-storage.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/api/chat-with-tools/route.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/api/chat/ai-project-assistant.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/api/chat/langchain-route.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/api/chat/route.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/api/chat/simple-route.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/simple-langchain-engine.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/docker/simple-docker-tools.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/api/chat/unified-route.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/api/containers/route.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/api/docker-containers/route.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/api/docker-dev-server/route.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/api/docker-status/route.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/api/docker/route.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/docker/index.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/api/health/route.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/api/project/route.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/components/Chat/ChatInterface.tsx"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/docker/smart-status-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/components/Chat/ChatMessages.tsx"
+    }
+  },
+  {
+    "data": {
+      "id": "app/components/Chat/MessageInput.tsx"
+    }
+  },
+  {
+    "data": {
+      "id": "app/components/Chat/index.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/components/DockerStatusWrapper.tsx"
+    }
+  },
+  {
+    "data": {
+      "id": "components/DockerStatusMonitor.tsx"
+    }
+  },
+  {
+    "data": {
+      "id": "app/components/Project/PreviewPanel.tsx"
+    }
+  },
+  {
+    "data": {
+      "id": "app/components/Project/ProjectCard.tsx"
+    }
+  },
+  {
+    "data": {
+      "id": "app/components/Project/ProjectDashboard.tsx"
+    }
+  },
+  {
+    "data": {
+      "id": "app/components/Project/ProjectFilters.tsx"
+    }
+  },
+  {
+    "data": {
+      "id": "app/components/Project/ProjectHeader.tsx"
+    }
+  },
+  {
+    "data": {
+      "id": "app/components/Project/index.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/components/Todo/TodoList.tsx"
+    }
+  },
+  {
+    "data": {
+      "id": "app/components/Todo/index.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/components/index.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "app/layout.tsx"
+    }
+  },
+  {
+    "data": {
+      "id": "app/globals.css"
+    }
+  },
+  {
+    "data": {
+      "id": "app/page.tsx"
+    }
+  },
+  {
+    "data": {
+      "id": "app/project/[id]/not-found.tsx"
+    }
+  },
+  {
+    "data": {
+      "id": "app/project/[id]/page.tsx"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/enhanced-context-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/enhanced-prompts.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/enhanced-tool-schemas.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/langchain-chat-engine copy.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/langchain-dependencies.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/stable-agent-executor.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/ai/unified-ai-agent-integration.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/functions/langchain-binder.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/core/diff-processor.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/core/index.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/core/tool-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/core/tool-types.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/docker/dynamic-project-tools.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/docker/index-legacy.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/docker/smart-port-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/functions/usage-examples.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/index.ts"
+    }
+  },
+  {
+    "data": {
+      "id": "lib/silent-logger.js"
+    }
+  },
+  {
+    "data": {
+      "id": "middleware.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/admin/logs/route.ts",
+      "target": "lib/core/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/agent/route.ts",
+      "target": "lib/ai/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/agent/route.ts",
+      "target": "lib/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/functions/migration-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/ai/agent-controller.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/ai/agent-factory.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/ai/ai-output-logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/ai/chat-agent-integration.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/ai/context-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/ai/docker-security-validator.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/ai/enhanced-tool-registry.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/ai/langchain-chat-engine.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/ai/openai.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/ai/openai-service.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/ai/prompt-builder.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/ai/prompts.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/ai/secure-chat-agent-integration.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/ai/strict-agent-factory.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/ai/strict-docker-tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/ai/strict-tool-registry.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/index.ts",
+      "target": "lib/ai/tools/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/migration-manager.ts",
+      "target": "lib/functions/categories.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/migration-manager.ts",
+      "target": "lib/functions/types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/categories.ts",
+      "target": "lib/functions/types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/agent-controller.ts",
+      "target": "lib/core/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/agent-controller.ts",
+      "target": "lib/docker/tool-registry.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/agent-controller.ts",
+      "target": "lib/ai/ai-output-logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/agent-controller.ts",
+      "target": "lib/ai/openai-service.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/ai-output-logger.ts",
+      "target": "lib/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/logger.ts",
+      "target": "lib/core/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/openai-service.ts",
+      "target": "lib/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/openai-service.ts",
+      "target": "lib/ai/ai-output-logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/agent-factory.ts",
+      "target": "lib/core/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/agent-factory.ts",
+      "target": "lib/docker/ai-editor-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/agent-factory.ts",
+      "target": "lib/ai/agent-controller.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/agent-factory.ts",
+      "target": "lib/ai/ai-output-logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/agent-factory.ts",
+      "target": "lib/ai/openai-service.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/agent-factory.ts",
+      "target": "lib/ai/strict-docker-tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/agent-factory.ts",
+      "target": "lib/ai/strict-tool-registry.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/docker/ai-editor-manager.ts",
+      "target": "lib/core/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/docker/ai-editor-manager.ts",
+      "target": "lib/docker/docker-context-config.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/docker/ai-editor-manager.ts",
+      "target": "lib/docker/function-schemas.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/docker/ai-editor-manager.ts",
+      "target": "lib/docker/tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/docker/docker-context-config.ts",
+      "target": "lib/docker/config-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/docker/docker-context-config.ts",
+      "target": "lib/docker/tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/docker/config-manager.ts",
+      "target": "lib/core/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/docker/config-manager.ts",
+      "target": "lib/docker/tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/strict-docker-tools.ts",
+      "target": "lib/core/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/strict-docker-tools.ts",
+      "target": "lib/docker/ai-editor-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/strict-docker-tools.ts",
+      "target": "lib/ai/agent-controller.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/strict-tool-registry.ts",
+      "target": "lib/core/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/strict-tool-registry.ts",
+      "target": "lib/docker/ai-editor-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/strict-tool-registry.ts",
+      "target": "lib/ai/agent-controller.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/strict-tool-registry.ts",
+      "target": "lib/ai/strict-docker-tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/chat-agent-integration.ts",
+      "target": "lib/docker/ai-editor-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/chat-agent-integration.ts",
+      "target": "lib/docker/docker-context-config.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/chat-agent-integration.ts",
+      "target": "lib/docker/tool-registry.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/chat-agent-integration.ts",
+      "target": "lib/docker/tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/chat-agent-integration.ts",
+      "target": "lib/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/chat-agent-integration.ts",
+      "target": "lib/ai/agent-controller.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/chat-agent-integration.ts",
+      "target": "lib/ai/enhanced-tool-registry.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/chat-agent-integration.ts",
+      "target": "lib/ai/openai-service.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/enhanced-tool-registry.ts",
+      "target": "lib/docker/ai-editor-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/enhanced-tool-registry.ts",
+      "target": "lib/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/enhanced-tool-registry.ts",
+      "target": "lib/ai/agent-controller.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/context-manager.ts",
+      "target": "lib/docker/tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/docker-security-validator.ts",
+      "target": "lib/docker/tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/docker-security-validator.ts",
+      "target": "lib/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/langchain-chat-engine.ts",
+      "target": "lib/constants.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/langchain-chat-engine.ts",
+      "target": "lib/docker/docker-context-config.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/langchain-chat-engine.ts",
+      "target": "lib/docker/tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/langchain-chat-engine.ts",
+      "target": "lib/functions/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/langchain-chat-engine.ts",
+      "target": "lib/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/index.ts",
+      "target": "lib/functions/ai/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/index.ts",
+      "target": "lib/functions/categories.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/index.ts",
+      "target": "lib/functions/categories.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/index.ts",
+      "target": "lib/functions/docker/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/index.ts",
+      "target": "lib/functions/executor.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/index.ts",
+      "target": "lib/functions/filesystem/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/index.ts",
+      "target": "lib/functions/network/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/index.ts",
+      "target": "lib/functions/project/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/index.ts",
+      "target": "lib/functions/registry.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/index.ts",
+      "target": "lib/functions/system/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/index.ts",
+      "target": "lib/functions/tool-list.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/index.ts",
+      "target": "lib/functions/types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/index.ts",
+      "target": "lib/functions/types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/index.ts",
+      "target": "lib/functions/utility/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/ai/index.ts",
+      "target": "lib/functions/categories.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/ai/index.ts",
+      "target": "lib/functions/types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/docker/index.ts",
+      "target": "lib/docker/docker-context-config.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/docker/index.ts",
+      "target": "lib/docker/tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/docker/index.ts",
+      "target": "lib/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/docker/index.ts",
+      "target": "lib/functions/categories.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/docker/index.ts",
+      "target": "lib/functions/types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/executor.ts",
+      "target": "lib/functions/types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/filesystem/index.ts",
+      "target": "lib/functions/categories.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/filesystem/index.ts",
+      "target": "lib/functions/types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/network/index.ts",
+      "target": "lib/functions/categories.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/network/index.ts",
+      "target": "lib/functions/types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/project/index.ts",
+      "target": "lib/functions/categories.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/project/index.ts",
+      "target": "lib/functions/types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/registry.ts",
+      "target": "lib/functions/types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/system/index.ts",
+      "target": "lib/functions/categories.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/system/index.ts",
+      "target": "lib/functions/types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/tool-list.ts",
+      "target": "lib/functions/types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/utility/index.ts",
+      "target": "lib/functions/categories.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/utility/index.ts",
+      "target": "lib/functions/types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/utility/index.ts",
+      "target": "lib/functions/utility/diff-tool.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/utility/diff-tool.ts",
+      "target": "lib/docker/tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/utility/diff-tool.ts",
+      "target": "lib/functions/types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/openai.ts",
+      "target": "lib/core/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/openai.ts",
+      "target": "lib/docker/ai-editor-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/secure-chat-agent-integration.ts",
+      "target": "lib/docker/ai-editor-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/secure-chat-agent-integration.ts",
+      "target": "lib/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/secure-chat-agent-integration.ts",
+      "target": "lib/ai/agent-controller.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/secure-chat-agent-integration.ts",
+      "target": "lib/ai/ai-output-logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/secure-chat-agent-integration.ts",
+      "target": "lib/ai/openai-service.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/secure-chat-agent-integration.ts",
+      "target": "lib/ai/strict-agent-factory.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/secure-chat-agent-integration.ts",
+      "target": "lib/ai/strict-tool-registry.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/strict-agent-factory.ts",
+      "target": "lib/docker/ai-editor-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/strict-agent-factory.ts",
+      "target": "lib/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/strict-agent-factory.ts",
+      "target": "lib/ai/agent-controller.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/strict-agent-factory.ts",
+      "target": "lib/ai/ai-output-logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/strict-agent-factory.ts",
+      "target": "lib/ai/openai-service.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/strict-agent-factory.ts",
+      "target": "lib/ai/strict-tool-registry.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/tools/index.ts",
+      "target": "lib/ai/tools/tool-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/tools/index.ts",
+      "target": "lib/ai/tools/tool-registry.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/tools/index.ts",
+      "target": "lib/ai/tools/tool-types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/tools/tool-manager.ts",
+      "target": "lib/core/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/tools/tool-manager.ts",
+      "target": "lib/ai/tools/tool-registry.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/tools/tool-manager.ts",
+      "target": "lib/ai/tools/tool-types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/tools/tool-registry.ts",
+      "target": "lib/core/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/tools/tool-registry.ts",
+      "target": "lib/ai/tools/tool-types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/chat-agent/route.ts",
+      "target": "lib/ai/secure-chat-agent-integration.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/chat-agent/route.ts",
+      "target": "lib/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/chat-enhanced/route.ts",
+      "target": "lib/ai/langchain-chat-engine.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/chat-enhanced/route.ts",
+      "target": "lib/chat/chat-context-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/chat-enhanced/route.ts",
+      "target": "lib/docker/docker-context-config.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/chat/chat-context-manager.ts",
+      "target": "lib/database/chat-storage.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/chat-with-tools/route.ts",
+      "target": "lib/ai/openai.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/chat-with-tools/route.ts",
+      "target": "lib/core/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/chat-with-tools/route.ts",
+      "target": "lib/docker/config-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/chat/ai-project-assistant.ts",
+      "target": "lib/ai/context-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/chat/ai-project-assistant.ts",
+      "target": "lib/ai/prompt-builder.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/chat/ai-project-assistant.ts",
+      "target": "lib/docker/tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/chat/langchain-route.ts",
+      "target": "lib/ai/context-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/chat/langchain-route.ts",
+      "target": "lib/ai/langchain-chat-engine.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/chat/route.ts",
+      "target": "lib/ai/langchain-chat-engine.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/chat/route.ts",
+      "target": "app/api/chat/ai-project-assistant.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/chat/simple-route.ts",
+      "target": "lib/ai/simple-langchain-engine.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/chat/simple-route.ts",
+      "target": "lib/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/simple-langchain-engine.ts",
+      "target": "lib/docker/simple-docker-tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/simple-langchain-engine.ts",
+      "target": "lib/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/docker/simple-docker-tools.ts",
+      "target": "lib/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/api/docker/route.ts",
+      "target": "lib/docker/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/docker/index.ts",
+      "target": "lib/docker/ai-editor-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/docker/index.ts",
+      "target": "lib/docker/config-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/docker/index.ts",
+      "target": "lib/docker/function-schemas.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/docker/index.ts",
+      "target": "lib/docker/tool-registry.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/docker/index.ts",
+      "target": "lib/docker/tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/components/Chat/ChatInterface.tsx",
+      "target": "lib/docker/smart-status-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/components/Chat/index.ts",
+      "target": "app/components/Chat/ChatInterface.tsx"
+    }
+  },
+  {
+    "data": {
+      "source": "app/components/Chat/index.ts",
+      "target": "app/components/Chat/ChatMessages.tsx"
+    }
+  },
+  {
+    "data": {
+      "source": "app/components/Chat/index.ts",
+      "target": "app/components/Chat/MessageInput.tsx"
+    }
+  },
+  {
+    "data": {
+      "source": "app/components/DockerStatusWrapper.tsx",
+      "target": "components/DockerStatusMonitor.tsx"
+    }
+  },
+  {
+    "data": {
+      "source": "components/DockerStatusMonitor.tsx",
+      "target": "app/api/docker-containers/route.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "components/DockerStatusMonitor.tsx",
+      "target": "app/api/docker-status/route.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "components/DockerStatusMonitor.tsx",
+      "target": "lib/docker/smart-status-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/components/Project/PreviewPanel.tsx",
+      "target": "lib/docker/smart-status-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/components/Project/ProjectDashboard.tsx",
+      "target": "app/components/Project/ProjectCard.tsx"
+    }
+  },
+  {
+    "data": {
+      "source": "app/components/Project/index.ts",
+      "target": "app/components/Project/PreviewPanel.tsx"
+    }
+  },
+  {
+    "data": {
+      "source": "app/components/Project/index.ts",
+      "target": "app/components/Project/ProjectCard.tsx"
+    }
+  },
+  {
+    "data": {
+      "source": "app/components/Project/index.ts",
+      "target": "app/components/Project/ProjectDashboard.tsx"
+    }
+  },
+  {
+    "data": {
+      "source": "app/components/Project/index.ts",
+      "target": "app/components/Project/ProjectFilters.tsx"
+    }
+  },
+  {
+    "data": {
+      "source": "app/components/Project/index.ts",
+      "target": "app/components/Project/ProjectHeader.tsx"
+    }
+  },
+  {
+    "data": {
+      "source": "app/components/Todo/index.ts",
+      "target": "app/components/Todo/TodoList.tsx"
+    }
+  },
+  {
+    "data": {
+      "source": "app/components/index.ts",
+      "target": "app/components/Chat/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/components/index.ts",
+      "target": "app/components/Project/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/components/index.ts",
+      "target": "app/components/Todo/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/layout.tsx",
+      "target": "app/globals.css"
+    }
+  },
+  {
+    "data": {
+      "source": "app/layout.tsx",
+      "target": "lib/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "app/page.tsx",
+      "target": "app/components/DockerStatusWrapper.tsx"
+    }
+  },
+  {
+    "data": {
+      "source": "app/page.tsx",
+      "target": "app/components/Project/ProjectDashboard.tsx"
+    }
+  },
+  {
+    "data": {
+      "source": "app/project/[id]/page.tsx",
+      "target": "app/components/Chat/ChatInterface.tsx"
+    }
+  },
+  {
+    "data": {
+      "source": "app/project/[id]/page.tsx",
+      "target": "app/components/Project/PreviewPanel.tsx"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/enhanced-context-manager.ts",
+      "target": "lib/ai/context-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/enhanced-prompts.ts",
+      "target": "lib/ai/enhanced-tool-schemas.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/langchain-chat-engine copy.ts",
+      "target": "lib/docker/tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/langchain-chat-engine copy.ts",
+      "target": "lib/ai/context-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/langchain-chat-engine copy.ts",
+      "target": "lib/ai/docker-security-validator.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/stable-agent-executor.ts",
+      "target": "lib/ai/enhanced-prompts.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/stable-agent-executor.ts",
+      "target": "lib/ai/enhanced-tool-schemas.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/unified-ai-agent-integration.ts",
+      "target": "lib/functions/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/unified-ai-agent-integration.ts",
+      "target": "lib/functions/langchain-binder.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/ai/unified-ai-agent-integration.ts",
+      "target": "lib/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/langchain-binder.ts",
+      "target": "lib/functions/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/functions/langchain-binder.ts",
+      "target": "lib/functions/types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/core/index.ts",
+      "target": "lib/core/diff-processor.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/core/index.ts",
+      "target": "lib/core/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/core/index.ts",
+      "target": "lib/core/tool-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/core/index.ts",
+      "target": "lib/core/tool-types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/core/tool-manager.ts",
+      "target": "lib/core/tool-types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/docker/dynamic-project-tools.ts",
+      "target": "lib/docker/docker-context-config.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/docker/dynamic-project-tools.ts",
+      "target": "lib/docker/tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/index.ts",
+      "target": "lib/ai/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/index.ts",
+      "target": "lib/ai/context-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/index.ts",
+      "target": "lib/core/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/index.ts",
+      "target": "lib/core/logger.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/index.ts",
+      "target": "lib/core/tool-manager.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/index.ts",
+      "target": "lib/core/tool-types.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/index.ts",
+      "target": "lib/docker/index.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/index.ts",
+      "target": "lib/docker/tools.ts"
+    }
+  },
+  {
+    "data": {
+      "source": "lib/index.ts",
+      "target": "lib/functions/index.ts"
+    }
+  }
+]
