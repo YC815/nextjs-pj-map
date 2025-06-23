@@ -62,7 +62,7 @@ class AnalysisProcessor:
         openai_api_key: str,
         github_repo: str,
         github_token: Optional[str] = None,
-        cache_dir: str = ".cache",
+        cache_dir: str = ".",
         use_local_clone: bool = False,
         clone_dir: str = "temp_repo_clone",
         branch: str = "main"
@@ -345,7 +345,7 @@ class AnalysisProcessor:
             print(f"❌ 分析檔案失敗 {file_path}: {e}")
             return None
 
-    def _load_cytoscape_elements(self, file_path: str = "public/cytoscape-elements.json") -> List[str]:
+    def _load_cytoscape_elements(self, file_path: str = "./cytoscape-elements.json") -> List[str]:
         """載入 cytoscape-elements.json 並提取檔案路徑"""
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
@@ -375,7 +375,7 @@ class AnalysisProcessor:
             except Exception as e:
                 print(f"⚠️ 清理克隆目錄失敗: {e}")
 
-    async def process_files(self, cytoscape_file: str = "public/cytoscape-elements.json"):
+    async def process_files(self, cytoscape_file: str = "./cytoscape-elements.json"):
         """處理所有檔案"""
         print("🚀 開始檔案分析處理...")
         print(f"📦 GitHub 倉庫: {self.github_repo}")

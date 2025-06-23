@@ -7,22 +7,25 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "summarize-server": "node summarize-server.js"
+    "summarize-server": "node summarize-server.js",
+    "analyze-deps": "node script/interactive-depcruise.js"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@langchain/openai": "^0.0.14",
     "@types/dagre": "^0.7.52",
+    "cors": "^2.8.5",
     "dagre": "^0.8.5",
+    "dependency-cruiser": "^16.10.3",
+    "express": "^4.18.2",
     "fuse.js": "^7.1.0",
+    "inquirer": "^12.6.3",
+    "langchain": "^0.0.205",
     "next": "15.3.4",
+    "openai": "^4.20.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "reactflow": "^11.11.4",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "openai": "^4.20.1",
-    "langchain": "^0.0.205",
-    "@langchain/openai": "^0.0.14",
     "zod": "^3.22.4"
   },
   "devDependencies": {
